@@ -18,6 +18,10 @@ jobs:
         with:
           ndk-version: r26d
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
       - name: Install tools
         run: |
           pip install onnxsim onnx
@@ -38,12 +42,13 @@ jobs:
 
       - name: Convert ONNX to NCNN
         run: |
-          export PATH="$HOME/.local/bin:$PATH"
-          onnxsim model/apex_final.onnx model/apex_final_sim.onnx || cp model/apex_final.onnx model/apex_final_sim.onnx
-          
           # 确保有所有必要的运行库
           sudo apt-get update && sudo apt-get install -y libvulkan1
           
+          # 执行模型简化
+          onnxsim model/apex_final.onnx model/apex_final_sim.onnx
+          
+          # 执行 NCNN 转换
           chmod +x ${NCNN_TOOLS_DIR}/bin/onnx2ncnn
           ${NCNN_TOOLS_DIR}/bin/onnx2ncnn model/apex_final_sim.onnx model/apex_final.param model/apex_final.bin
           
