@@ -1,0 +1,69 @@
+name: Build Android NCNN Server
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - uses: nttld/setup-ndk@v1
+        id: ndk
+        with:
+          ndk-version: r26d
+
+      - name: Install tools
+        run: |
+          pip install onnxsim onnx
+          sudo apt-get install -y unzip wget
+
+      - name: Download NCNN
+        run: |
+          LATEST=$(curl -s https://api.github.com/repos/Tencent/ncnn/releases/latest | grep tag_name | cut -d'"' -f4)
+          echo "NCNN version: ${LATEST}"
+          wget -q "https://github.com/Tencent/ncnn/releases/download/${LATEST}/ncnn-${LATEST}-android-vulkan.zip" -O ncnn-android.zip
+          wget -q "https://github.com/Tencent/ncnn/releases/download/${LATEST}/ncnn-${LATEST}-ubuntu-2204.zip" -O ncnn-tools.zip
+          unzip -q ncnn-android.zip
+          unzip -q ncnn-tools.zip
+          NCNN_ANDROID_DIR=$(find . -maxdepth 1 -name "ncnn-*-android-vulkan" -type d | head -1)
+          NCNN_TOOLS_DIR=$(find . -maxdepth 1 -name "ncnn-*-ubuntu*" -type d | head -1)
+          echo "NCNN_ANDROID_DIR=${NCNN_ANDROID_DIR}" >> $GITHUB_ENV
+          echo "NCNN_TOOLS_DIR=${NCNN_TOOLS_DIR}" >> $GITHUB_ENV
+
+      - name: Convert ONNX to NCNN
+        run: |
+          python -m onnxsim model/apex_final.onnx model/apex_final_sim.onnx
+          chmod +x ${NCNN_TOOLS_DIR}/bin/onnx2ncnn
+          ${NCNN_TOOLS_DIR}/bin/onnx2ncnn model/apex_final_sim.onnx model/apex_final.param model/apex_final.bin
+          # 优化模型 (fp16)
+          chmod +x ${NCNN_TOOLS_DIR}/bin/ncnnoptimize
+          ${NCNN_TOOLS_DIR}/bin/ncnnoptimize model/apex_final.param model/apex_final.bin model/apex_final_opt.param model/apex_final_opt.bin 65536
+
+      - name: Build for Android ARM64
+        run: |
+          mkdir build && cd build
+          cmake .. \
+            -DCMAKE_TOOLCHAIN_FILE=${{ steps.ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake \
+            -DANDROID_ABI=arm64-v8a \
+            -DANDROID_PLATFORM=android-24 \
+            -DANDROID_STL=c++_static \
+            -Dncnn_DIR=${NCNN_ANDROID_DIR}/arm64-v8a/lib/cmake/ncnn
+          make -j$(nproc)
+
+      - name: Package
+        run: |
+          mkdir -p release
+          cp build/apex_server release/
+          cp model/apex_final_opt.param release/apex_final.param
+          cp model/apex_final_opt.bin release/apex_final.bin
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apex-server-android-arm64
+          path: release/
