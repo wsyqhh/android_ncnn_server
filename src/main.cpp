@@ -97,9 +97,9 @@ public:
         padded.substract_mean_normalize(0, norm);
 
         ncnn::Extractor ex = net.create_extractor();
-        ex.input("images", padded);
+        ex.input("in0", padded);
         ncnn::Mat out;
-        ex.extract("output0", out);
+        ex.extract("out0", out);
 
         // YOLOv8 后处理
         int rows = out.h, cols = out.w;
