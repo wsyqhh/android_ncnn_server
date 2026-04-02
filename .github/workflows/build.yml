@@ -40,21 +40,7 @@ jobs:
           echo "NCNN_ANDROID_DIR=${NCNN_ANDROID_DIR}" >> $GITHUB_ENV
           echo "NCNN_TOOLS_DIR=${NCNN_TOOLS_DIR}" >> $GITHUB_ENV
 
-      - name: Convert ONNX to NCNN
-        run: |
-          # 确保有所有必要的运行库
-          sudo apt-get update && sudo apt-get install -y libvulkan1
-          
-          # 执行模型简化
-          onnxsim model/apex_final.onnx model/apex_final_sim.onnx
-          
-          # 执行 NCNN 转换
-          chmod +x ${NCNN_TOOLS_DIR}/bin/onnx2ncnn
-          ${NCNN_TOOLS_DIR}/bin/onnx2ncnn model/apex_final_sim.onnx model/apex_final.param model/apex_final.bin
-          
-          # 优化模型 (fp16)
-          chmod +x ${NCNN_TOOLS_DIR}/bin/ncnnoptimize
-          ${NCNN_TOOLS_DIR}/bin/ncnnoptimize model/apex_final.param model/apex_final.bin model/apex_final_opt.param model/apex_final_opt.bin 65536
+
 
       - name: Build for Android ARM64
         run: |
@@ -71,8 +57,6 @@ jobs:
         run: |
           mkdir -p release
           cp build/apex_server release/
-          cp model/apex_final_opt.param release/apex_final.param
-          cp model/apex_final_opt.bin release/apex_final.bin
 
       - uses: actions/upload-artifact@v4
         with:
