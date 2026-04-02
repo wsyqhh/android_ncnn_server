@@ -1,0 +1,14 @@
+﻿2026-04-02T09:14:32.7330843Z ##[group]Run LATEST=$(curl -s https://api.github.com/repos/Tencent/ncnn/releases/latest | grep tag_name | cut -d'"' -f4)
+2026-04-02T09:14:32.7332283Z [36;1mLATEST=$(curl -s https://api.github.com/repos/Tencent/ncnn/releases/latest | grep tag_name | cut -d'"' -f4)[0m
+2026-04-02T09:14:32.7333161Z [36;1mecho "NCNN version: ${LATEST}"[0m
+2026-04-02T09:14:32.7334076Z [36;1mwget -q "https://github.com/Tencent/ncnn/releases/download/${LATEST}/ncnn-${LATEST}-android-vulkan.zip" -O ncnn-android.zip[0m
+2026-04-02T09:14:32.7335325Z [36;1mwget -q "https://github.com/Tencent/ncnn/releases/download/${LATEST}/ncnn-${LATEST}-ubuntu-2204.zip" -O ncnn-tools.zip[0m
+2026-04-02T09:14:32.7335858Z [36;1munzip -q ncnn-android.zip[0m
+2026-04-02T09:14:32.7336113Z [36;1munzip -q ncnn-tools.zip[0m
+2026-04-02T09:14:32.7336514Z [36;1mNCNN_ANDROID_DIR=$(find . -maxdepth 1 -name "ncnn-*-android-vulkan" -type d | head -1)[0m
+2026-04-02T09:14:32.7337079Z [36;1mNCNN_TOOLS_DIR=$(find . -maxdepth 1 -name "ncnn-*-ubuntu*" -type d | head -1)[0m
+2026-04-02T09:14:32.7337583Z [36;1mecho "NCNN_ANDROID_DIR=${NCNN_ANDROID_DIR}" >> $GITHUB_ENV[0m
+2026-04-02T09:14:32.7337955Z [36;1mecho "NCNN_TOOLS_DIR=${NCNN_TOOLS_DIR}" >> $GITHUB_ENV[0m
+2026-04-02T09:14:32.7420371Z shell: /usr/bin/bash -e {0}
+2026-04-02T09:14:32.7420788Z ##[endgroup]
+2026-04-02T09:14:32.9419147Z NCNN version: 20260113

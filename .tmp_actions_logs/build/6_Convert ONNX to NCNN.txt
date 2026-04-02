@@ -1,0 +1,63 @@
+﻿2026-04-02T09:14:35.2129217Z ##[group]Run python -m onnxsim model/apex_final.onnx model/apex_final_sim.onnx
+2026-04-02T09:14:35.2129794Z [36;1mpython -m onnxsim model/apex_final.onnx model/apex_final_sim.onnx[0m
+2026-04-02T09:14:35.2130197Z [36;1mchmod +x ${NCNN_TOOLS_DIR}/bin/onnx2ncnn[0m
+2026-04-02T09:14:35.2131089Z [36;1m${NCNN_TOOLS_DIR}/bin/onnx2ncnn model/apex_final_sim.onnx model/apex_final.param model/apex_final.bin[0m
+2026-04-02T09:14:35.2131591Z [36;1m# 优化模型 (fp16)[0m
+2026-04-02T09:14:35.2131850Z [36;1mchmod +x ${NCNN_TOOLS_DIR}/bin/ncnnoptimize[0m
+2026-04-02T09:14:35.2132490Z [36;1m${NCNN_TOOLS_DIR}/bin/ncnnoptimize model/apex_final.param model/apex_final.bin model/apex_final_opt.param model/apex_final_opt.bin 65536[0m
+2026-04-02T09:14:35.2193442Z shell: /usr/bin/bash -e {0}
+2026-04-02T09:14:35.2193685Z env:
+2026-04-02T09:14:35.2193908Z   NCNN_ANDROID_DIR: ./ncnn-20260113-android-vulkan
+2026-04-02T09:14:35.2194245Z   NCNN_TOOLS_DIR: ./ncnn-20260113-ubuntu-2204
+2026-04-02T09:14:35.2194508Z ##[endgroup]
+2026-04-02T09:14:35.4613804Z Installing onnxruntime by `/usr/bin/python -m pip install onnxruntime`, please 
+2026-04-02T09:14:35.4614950Z wait for a moment..
+2026-04-02T09:14:35.7573000Z Defaulting to user installation because normal site-packages is not writeable
+2026-04-02T09:14:36.0781744Z Collecting onnxruntime
+2026-04-02T09:14:36.1322428Z   Downloading onnxruntime-1.23.2-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (17.4 MB)
+2026-04-02T09:14:36.4192289Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.4/17.4 MB 89.2 MB/s eta 0:00:00
+2026-04-02T09:14:36.4643715Z Collecting flatbuffers
+2026-04-02T09:14:36.4716732Z   Downloading flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+2026-04-02T09:14:36.4746660Z Requirement already satisfied: protobuf in /home/runner/.local/lib/python3.10/site-packages (from onnxruntime) (7.34.1)
+2026-04-02T09:14:36.5051658Z Collecting sympy
+2026-04-02T09:14:36.5126944Z   Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+2026-04-02T09:14:36.5644351Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 127.6 MB/s eta 0:00:00
+2026-04-02T09:14:36.5817251Z Requirement already satisfied: packaging in /usr/lib/python3/dist-packages (from onnxruntime) (21.3)
+2026-04-02T09:14:36.5824599Z Requirement already satisfied: numpy>=1.21.6 in /home/runner/.local/lib/python3.10/site-packages (from onnxruntime) (2.2.6)
+2026-04-02T09:14:36.6108946Z Collecting coloredlogs
+2026-04-02T09:14:36.6183093Z   Downloading coloredlogs-15.0.1-py2.py3-none-any.whl (46 kB)
+2026-04-02T09:14:36.6219549Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.0/46.0 KB 23.6 MB/s eta 0:00:00
+2026-04-02T09:14:36.6620129Z Collecting humanfriendly>=9.1
+2026-04-02T09:14:36.6692528Z   Downloading humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
+2026-04-02T09:14:36.6729998Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 86.8/86.8 KB 44.5 MB/s eta 0:00:00
+2026-04-02T09:14:36.7003692Z Collecting mpmath<1.4,>=1.1.0
+2026-04-02T09:14:36.7083857Z   Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-04-02T09:14:36.7157037Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 KB 115.5 MB/s eta 0:00:00
+2026-04-02T09:14:36.8825401Z Installing collected packages: mpmath, flatbuffers, sympy, humanfriendly, coloredlogs, onnxruntime
+2026-04-02T09:14:41.7588615Z Successfully installed coloredlogs-15.0.1 flatbuffers-25.12.19 humanfriendly-10.0 mpmath-1.3.0 onnxruntime-1.23.2 sympy-1.14.0
+2026-04-02T09:14:41.8787715Z Simplifying...
+2026-04-02T09:14:42.1077477Z Finish! Here is the difference:
+2026-04-02T09:14:42.1247842Z ┏━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┓
+2026-04-02T09:14:42.1249595Z ┃            ┃ Original Model ┃ Simplified Model ┃
+2026-04-02T09:14:42.1250127Z ┡━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━┩
+2026-04-02T09:14:42.1251646Z │ Add        │ 9              │ 8                │
+2026-04-02T09:14:42.1252123Z │ Concat     │ 19             │ 19               │
+2026-04-02T09:14:42.1252597Z │ Constant   │ 149            │ 143              │
+2026-04-02T09:14:42.1253100Z │ Conv       │ 64             │ 64               │
+2026-04-02T09:14:42.1254175Z │ Div        │ 2              │ 1                │
+2026-04-02T09:14:42.1254622Z │ Gather     │ 1              │ 0                │
+2026-04-02T09:14:42.1255069Z │ MaxPool    │ 3              │ 3                │
+2026-04-02T09:14:42.1255520Z │ Mul        │ 60             │ 58               │
+2026-04-02T09:14:42.1255963Z │ Reshape    │ 5              │ 5                │
+2026-04-02T09:14:42.1256432Z │ Resize     │ 2              │ 2                │
+2026-04-02T09:14:42.1256865Z │ Shape      │ 1              │ 0                │
+2026-04-02T09:14:42.1257347Z │ Sigmoid    │ 58             │ 58               │
+2026-04-02T09:14:42.1257774Z │ Slice      │ 2              │ 2                │
+2026-04-02T09:14:42.1258218Z │ Softmax    │ 1              │ 1                │
+2026-04-02T09:14:42.1258660Z │ Split      │ 9              │ 9                │
+2026-04-02T09:14:42.1259101Z │ Sub        │ 2              │ 2                │
+2026-04-02T09:14:42.1259791Z │ Transpose  │ 1              │ 1                │
+2026-04-02T09:14:42.1260276Z │ Model Size │ 11.7MiB        │ 11.6MiB          │
+2026-04-02T09:14:42.1260931Z └────────────┴────────────────┴──────────────────┘
+2026-04-02T09:14:42.1716747Z chmod: cannot access './ncnn-20260113-ubuntu-2204/bin/onnx2ncnn': No such file or directory
+2026-04-02T09:14:42.1733978Z ##[error]Process completed with exit code 1.

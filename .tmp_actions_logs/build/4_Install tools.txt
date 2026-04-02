@@ -1,0 +1,43 @@
+﻿2026-04-02T09:14:18.8411261Z ##[group]Run pip install onnxsim onnx
+2026-04-02T09:14:18.8411702Z [36;1mpip install onnxsim onnx[0m
+2026-04-02T09:14:18.8411991Z [36;1msudo apt-get install -y unzip wget[0m
+2026-04-02T09:14:18.8536828Z shell: /usr/bin/bash -e {0}
+2026-04-02T09:14:18.8537130Z ##[endgroup]
+2026-04-02T09:14:20.2391604Z Defaulting to user installation because normal site-packages is not writeable
+2026-04-02T09:14:21.0149152Z Collecting onnxsim
+2026-04-02T09:14:21.0784805Z   Downloading onnxsim-0.6.2-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (2.9 MB)
+2026-04-02T09:14:21.2360001Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 18.8 MB/s eta 0:00:00
+2026-04-02T09:14:21.3785593Z Collecting onnx
+2026-04-02T09:14:21.3889758Z   Downloading onnx-1.21.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (17.6 MB)
+2026-04-02T09:14:21.6262708Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.6/17.6 MB 89.0 MB/s eta 0:00:00
+2026-04-02T09:14:21.8030729Z Collecting rich
+2026-04-02T09:14:21.8112979Z   Downloading rich-14.3.3-py3-none-any.whl (310 kB)
+2026-04-02T09:14:21.8176267Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.5/310.5 KB 76.7 MB/s eta 0:00:00
+2026-04-02T09:14:21.8555276Z Collecting typing_extensions>=4.7.1
+2026-04-02T09:14:21.8636586Z   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2026-04-02T09:14:21.8675528Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 KB 20.5 MB/s eta 0:00:00
+2026-04-02T09:14:21.9228238Z Collecting ml_dtypes>=0.5.0
+2026-04-02T09:14:21.9312577Z   Downloading ml_dtypes-0.5.4-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (5.0 MB)
+2026-04-02T09:14:21.9747621Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.0/5.0 MB 122.4 MB/s eta 0:00:00
+2026-04-02T09:14:22.4588963Z Collecting numpy>=1.23.2
+2026-04-02T09:14:22.4674998Z   Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+2026-04-02T09:14:22.5748200Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 134.0 MB/s eta 0:00:00
+2026-04-02T09:14:22.9524232Z Collecting protobuf>=4.25.1
+2026-04-02T09:14:22.9615604Z   Downloading protobuf-7.34.1-cp310-abi3-manylinux2014_x86_64.whl (324 kB)
+2026-04-02T09:14:22.9672974Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 324.3/324.3 KB 93.7 MB/s eta 0:00:00
+2026-04-02T09:14:23.0415463Z Collecting pygments<3.0.0,>=2.13.0
+2026-04-02T09:14:23.0513239Z   Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+2026-04-02T09:14:23.0621511Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 142.3 MB/s eta 0:00:00
+2026-04-02T09:14:23.0933932Z Collecting markdown-it-py>=2.2.0
+2026-04-02T09:14:23.1013063Z   Downloading markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+2026-04-02T09:14:23.1052951Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.3/87.3 KB 40.6 MB/s eta 0:00:00
+2026-04-02T09:14:23.1388358Z Collecting mdurl~=0.1
+2026-04-02T09:14:23.1463262Z   Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-04-02T09:14:23.4336680Z Installing collected packages: typing_extensions, pygments, protobuf, numpy, mdurl, ml_dtypes, markdown-it-py, rich, onnx, onnxsim
+2026-04-02T09:14:28.3048965Z Successfully installed markdown-it-py-4.0.0 mdurl-0.1.2 ml_dtypes-0.5.4 numpy-2.2.6 onnx-1.21.0 onnxsim-0.6.2 protobuf-7.34.1 pygments-2.20.0 rich-14.3.3 typing_extensions-4.15.0
+2026-04-02T09:14:32.2810014Z Reading package lists...
+2026-04-02T09:14:32.5231126Z Building dependency tree...
+2026-04-02T09:14:32.5245886Z Reading state information...
+2026-04-02T09:14:32.7194977Z unzip is already the newest version (6.0-26ubuntu3.2).
+2026-04-02T09:14:32.7199348Z wget is already the newest version (1.21.2-2ubuntu1.1).
+2026-04-02T09:14:32.7202392Z 0 upgraded, 0 newly installed, 0 to remove and 40 not upgraded.

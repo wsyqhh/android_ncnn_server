@@ -1,0 +1,81 @@
+﻿2026-04-02T09:13:42.8758363Z ##[group]Run actions/checkout@v4
+2026-04-02T09:13:42.8759242Z with:
+2026-04-02T09:13:42.8759624Z   lfs: true
+2026-04-02T09:13:42.8760045Z   repository: wsyqhh/android_ncnn_server
+2026-04-02T09:13:42.8761136Z   token: ***
+2026-04-02T09:13:42.8761566Z   ssh-strict: true
+2026-04-02T09:13:42.8761989Z   ssh-user: git
+2026-04-02T09:13:42.8762399Z   persist-credentials: true
+2026-04-02T09:13:42.8762875Z   clean: true
+2026-04-02T09:13:42.8763289Z   sparse-checkout-cone-mode: true
+2026-04-02T09:13:42.8763791Z   fetch-depth: 1
+2026-04-02T09:13:42.8764188Z   fetch-tags: false
+2026-04-02T09:13:42.8764603Z   show-progress: true
+2026-04-02T09:13:42.8765066Z   submodules: false
+2026-04-02T09:13:42.8765507Z   set-safe-directory: true
+2026-04-02T09:13:42.8766269Z ##[endgroup]
+2026-04-02T09:13:42.9941796Z Syncing repository: wsyqhh/android_ncnn_server
+2026-04-02T09:13:42.9945781Z ##[group]Getting Git version info
+2026-04-02T09:13:42.9947120Z Working directory is '/home/runner/work/android_ncnn_server/android_ncnn_server'
+2026-04-02T09:13:42.9948989Z [command]/usr/bin/git version
+2026-04-02T09:13:43.0012426Z git version 2.53.0
+2026-04-02T09:13:43.0072758Z [command]/usr/bin/git lfs version
+2026-04-02T09:13:43.0539742Z git-lfs/3.7.1 (GitHub; linux amd64; go 1.24.4)
+2026-04-02T09:13:43.0554780Z ##[endgroup]
+2026-04-02T09:13:43.0572737Z Temporarily overriding HOME='/home/runner/work/_temp/5ec7e329-6298-4f74-8b06-fc48429cf827' before making global git config changes
+2026-04-02T09:13:43.0576739Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-02T09:13:43.0581167Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/android_ncnn_server/android_ncnn_server
+2026-04-02T09:13:43.0619598Z Deleting the contents of '/home/runner/work/android_ncnn_server/android_ncnn_server'
+2026-04-02T09:13:43.0624542Z ##[group]Initializing the repository
+2026-04-02T09:13:43.0629451Z [command]/usr/bin/git init /home/runner/work/android_ncnn_server/android_ncnn_server
+2026-04-02T09:13:43.0731821Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-04-02T09:13:43.0733801Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-04-02T09:13:43.0736909Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-04-02T09:13:43.0738398Z hint: call:
+2026-04-02T09:13:43.0739043Z hint:
+2026-04-02T09:13:43.0739854Z hint: 	git config --global init.defaultBranch <name>
+2026-04-02T09:13:43.0741112Z hint:
+2026-04-02T09:13:43.0742114Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-04-02T09:13:43.0743727Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-04-02T09:13:43.0744985Z hint:
+2026-04-02T09:13:43.0745661Z hint: 	git branch -m <name>
+2026-04-02T09:13:43.0746411Z hint:
+2026-04-02T09:13:43.0747440Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-04-02T09:13:43.0752467Z Initialized empty Git repository in /home/runner/work/android_ncnn_server/android_ncnn_server/.git/
+2026-04-02T09:13:43.0756556Z [command]/usr/bin/git remote add origin https://github.com/wsyqhh/android_ncnn_server
+2026-04-02T09:13:43.0797199Z ##[endgroup]
+2026-04-02T09:13:43.0801092Z ##[group]Disabling automatic garbage collection
+2026-04-02T09:13:43.0804628Z [command]/usr/bin/git config --local gc.auto 0
+2026-04-02T09:13:43.0832438Z ##[endgroup]
+2026-04-02T09:13:43.0835049Z ##[group]Setting up auth
+2026-04-02T09:13:43.0838858Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-02T09:13:43.0873532Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-02T09:13:43.1194358Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-02T09:13:43.1204005Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-02T09:13:43.1465960Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-02T09:13:43.1505145Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-02T09:13:43.1760226Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-04-02T09:13:43.1803913Z ##[endgroup]
+2026-04-02T09:13:43.1809003Z [command]/usr/bin/git lfs install --local
+2026-04-02T09:13:43.2201937Z Updated Git hooks.
+2026-04-02T09:13:43.2206285Z Git LFS initialized.
+2026-04-02T09:13:43.2229534Z ##[group]Fetching the repository
+2026-04-02T09:13:43.2236062Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7cce43a9cf9754e467dfdc24cd91a9810c954f0f:refs/remotes/origin/main
+2026-04-02T09:13:44.2803190Z From https://github.com/wsyqhh/android_ncnn_server
+2026-04-02T09:13:44.2806771Z  * [new ref]         7cce43a9cf9754e467dfdc24cd91a9810c954f0f -> origin/main
+2026-04-02T09:13:44.2843587Z ##[endgroup]
+2026-04-02T09:13:44.2845219Z ##[group]Determining the checkout info
+2026-04-02T09:13:44.2848981Z ##[endgroup]
+2026-04-02T09:13:44.2851114Z ##[group]Fetching LFS objects
+2026-04-02T09:13:44.2857586Z [command]/usr/bin/git lfs fetch origin refs/remotes/origin/main
+2026-04-02T09:13:44.3115908Z Fetching reference refs/remotes/origin/main
+2026-04-02T09:13:44.3217385Z ##[endgroup]
+2026-04-02T09:13:44.3219809Z [command]/usr/bin/git sparse-checkout disable
+2026-04-02T09:13:44.3266640Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-04-02T09:13:44.3299476Z ##[group]Checking out the ref
+2026-04-02T09:13:44.3305485Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-04-02T09:13:44.4205289Z Switched to a new branch 'main'
+2026-04-02T09:13:44.4207678Z branch 'main' set up to track 'origin/main'.
+2026-04-02T09:13:44.4466225Z ##[endgroup]
+2026-04-02T09:13:44.4507176Z [command]/usr/bin/git log -1 --format=%H
+2026-04-02T09:13:44.4533882Z 7cce43a9cf9754e467dfdc24cd91a9810c954f0f

@@ -1,6 +1,7 @@
 // apex_server — NCNN 原生推理服务器 (运行在安卓平板 Termux)
 // 通过 TCP 接收 BGR 图像，NCNN+Vulkan GPU 推理，回传检测结果
 #include "net.h"
+#include "gpu.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

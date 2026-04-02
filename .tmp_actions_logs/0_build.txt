@@ -1,0 +1,264 @@
+﻿2026-04-02T09:13:41.6125824Z Current runner version: '2.333.1'
+2026-04-02T09:13:41.6202064Z ##[group]Runner Image Provisioner
+2026-04-02T09:13:41.6203416Z Hosted Compute Agent
+2026-04-02T09:13:41.6204253Z Version: 20260213.493
+2026-04-02T09:13:41.6205154Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-04-02T09:13:41.6206127Z Build Date: 2026-02-13T00:28:41Z
+2026-04-02T09:13:41.6207331Z Worker ID: {042468c0-b8bb-4726-9c52-01ff592cff57}
+2026-04-02T09:13:41.6208288Z Azure Region: eastus2
+2026-04-02T09:13:41.6209066Z ##[endgroup]
+2026-04-02T09:13:41.6232201Z ##[group]Operating System
+2026-04-02T09:13:41.6233096Z Ubuntu
+2026-04-02T09:13:41.6233994Z 22.04.5
+2026-04-02T09:13:41.6234659Z LTS
+2026-04-02T09:13:41.6235383Z ##[endgroup]
+2026-04-02T09:13:41.6236049Z ##[group]Runner Image
+2026-04-02T09:13:41.6237104Z Image: ubuntu-22.04
+2026-04-02T09:13:41.6237848Z Version: 20260329.74.1
+2026-04-02T09:13:41.6239882Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20260329.74/images/ubuntu/Ubuntu2204-Readme.md
+2026-04-02T09:13:41.6242456Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20260329.74
+2026-04-02T09:13:41.6244132Z ##[endgroup]
+2026-04-02T09:13:41.6245817Z ##[group]GITHUB_TOKEN Permissions
+2026-04-02T09:13:41.6248549Z Contents: read
+2026-04-02T09:13:41.6249303Z Metadata: read
+2026-04-02T09:13:41.6250060Z Packages: read
+2026-04-02T09:13:41.6251053Z ##[endgroup]
+2026-04-02T09:13:41.6254702Z Secret source: Actions
+2026-04-02T09:13:41.6255895Z Prepare workflow directory
+2026-04-02T09:13:41.6869430Z Prepare all required actions
+2026-04-02T09:13:41.6986317Z Getting action download info
+2026-04-02T09:13:42.1469436Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-04-02T09:13:42.2985356Z Download action repository 'nttld/setup-ndk@v1' (SHA:ed92fe6cadad69be94a966a7ee3271275e62f779)
+2026-04-02T09:13:42.5596718Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-04-02T09:13:42.8045526Z Complete job name: build
+2026-04-02T09:13:42.8758403Z ##[group]Run actions/checkout@v4
+2026-04-02T09:13:42.8759249Z with:
+2026-04-02T09:13:42.8759628Z   lfs: true
+2026-04-02T09:13:42.8760049Z   repository: wsyqhh/android_ncnn_server
+2026-04-02T09:13:42.8761142Z   token: ***
+2026-04-02T09:13:42.8761570Z   ssh-strict: true
+2026-04-02T09:13:42.8761994Z   ssh-user: git
+2026-04-02T09:13:42.8762404Z   persist-credentials: true
+2026-04-02T09:13:42.8762878Z   clean: true
+2026-04-02T09:13:42.8763293Z   sparse-checkout-cone-mode: true
+2026-04-02T09:13:42.8763795Z   fetch-depth: 1
+2026-04-02T09:13:42.8764192Z   fetch-tags: false
+2026-04-02T09:13:42.8764607Z   show-progress: true
+2026-04-02T09:13:42.8765079Z   submodules: false
+2026-04-02T09:13:42.8765511Z   set-safe-directory: true
+2026-04-02T09:13:42.8766276Z ##[endgroup]
+2026-04-02T09:13:42.9941881Z Syncing repository: wsyqhh/android_ncnn_server
+2026-04-02T09:13:42.9945812Z ##[group]Getting Git version info
+2026-04-02T09:13:42.9947245Z Working directory is '/home/runner/work/android_ncnn_server/android_ncnn_server'
+2026-04-02T09:13:42.9948999Z [command]/usr/bin/git version
+2026-04-02T09:13:43.0012488Z git version 2.53.0
+2026-04-02T09:13:43.0072803Z [command]/usr/bin/git lfs version
+2026-04-02T09:13:43.0539845Z git-lfs/3.7.1 (GitHub; linux amd64; go 1.24.4)
+2026-04-02T09:13:43.0554818Z ##[endgroup]
+2026-04-02T09:13:43.0572779Z Temporarily overriding HOME='/home/runner/work/_temp/5ec7e329-6298-4f74-8b06-fc48429cf827' before making global git config changes
+2026-04-02T09:13:43.0576769Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-02T09:13:43.0581205Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/android_ncnn_server/android_ncnn_server
+2026-04-02T09:13:43.0619645Z Deleting the contents of '/home/runner/work/android_ncnn_server/android_ncnn_server'
+2026-04-02T09:13:43.0624571Z ##[group]Initializing the repository
+2026-04-02T09:13:43.0629485Z [command]/usr/bin/git init /home/runner/work/android_ncnn_server/android_ncnn_server
+2026-04-02T09:13:43.0731911Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-04-02T09:13:43.0733819Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-04-02T09:13:43.0736937Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-04-02T09:13:43.0738415Z hint: call:
+2026-04-02T09:13:43.0739051Z hint:
+2026-04-02T09:13:43.0739866Z hint: 	git config --global init.defaultBranch <name>
+2026-04-02T09:13:43.0741131Z hint:
+2026-04-02T09:13:43.0742127Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-04-02T09:13:43.0743745Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-04-02T09:13:43.0745007Z hint:
+2026-04-02T09:13:43.0745669Z hint: 	git branch -m <name>
+2026-04-02T09:13:43.0746417Z hint:
+2026-04-02T09:13:43.0747449Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-04-02T09:13:43.0752530Z Initialized empty Git repository in /home/runner/work/android_ncnn_server/android_ncnn_server/.git/
+2026-04-02T09:13:43.0756581Z [command]/usr/bin/git remote add origin https://github.com/wsyqhh/android_ncnn_server
+2026-04-02T09:13:43.0797232Z ##[endgroup]
+2026-04-02T09:13:43.0801120Z ##[group]Disabling automatic garbage collection
+2026-04-02T09:13:43.0804651Z [command]/usr/bin/git config --local gc.auto 0
+2026-04-02T09:13:43.0832476Z ##[endgroup]
+2026-04-02T09:13:43.0835065Z ##[group]Setting up auth
+2026-04-02T09:13:43.0838893Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-02T09:13:43.0873581Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-02T09:13:43.1194430Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-02T09:13:43.1204542Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-02T09:13:43.1466054Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-02T09:13:43.1505207Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-02T09:13:43.1760348Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-04-02T09:13:43.1803978Z ##[endgroup]
+2026-04-02T09:13:43.1809041Z [command]/usr/bin/git lfs install --local
+2026-04-02T09:13:43.2202069Z Updated Git hooks.
+2026-04-02T09:13:43.2206327Z Git LFS initialized.
+2026-04-02T09:13:43.2229587Z ##[group]Fetching the repository
+2026-04-02T09:13:43.2236192Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7cce43a9cf9754e467dfdc24cd91a9810c954f0f:refs/remotes/origin/main
+2026-04-02T09:13:44.2803273Z From https://github.com/wsyqhh/android_ncnn_server
+2026-04-02T09:13:44.2806791Z  * [new ref]         7cce43a9cf9754e467dfdc24cd91a9810c954f0f -> origin/main
+2026-04-02T09:13:44.2843612Z ##[endgroup]
+2026-04-02T09:13:44.2845230Z ##[group]Determining the checkout info
+2026-04-02T09:13:44.2849023Z ##[endgroup]
+2026-04-02T09:13:44.2851127Z ##[group]Fetching LFS objects
+2026-04-02T09:13:44.2857608Z [command]/usr/bin/git lfs fetch origin refs/remotes/origin/main
+2026-04-02T09:13:44.3116038Z Fetching reference refs/remotes/origin/main
+2026-04-02T09:13:44.3217450Z ##[endgroup]
+2026-04-02T09:13:44.3219829Z [command]/usr/bin/git sparse-checkout disable
+2026-04-02T09:13:44.3266678Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-04-02T09:13:44.3299502Z ##[group]Checking out the ref
+2026-04-02T09:13:44.3305511Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-04-02T09:13:44.4205463Z Switched to a new branch 'main'
+2026-04-02T09:13:44.4207713Z branch 'main' set up to track 'origin/main'.
+2026-04-02T09:13:44.4466282Z ##[endgroup]
+2026-04-02T09:13:44.4507207Z [command]/usr/bin/git log -1 --format=%H
+2026-04-02T09:13:44.4533903Z 7cce43a9cf9754e467dfdc24cd91a9810c954f0f
+2026-04-02T09:13:44.4796842Z ##[group]Run nttld/setup-ndk@v1
+2026-04-02T09:13:44.4797848Z with:
+2026-04-02T09:13:44.4798599Z   ndk-version: r26d
+2026-04-02T09:13:44.4799427Z   add-to-path: true
+2026-04-02T09:13:44.4800261Z   link-to-sdk: false
+2026-04-02T09:13:44.4801487Z   local-cache: false
+2026-04-02T09:13:44.4802346Z ##[endgroup]
+2026-04-02T09:13:44.5960308Z Attempting to download r26d...
+2026-04-02T09:13:47.3225274Z Extracting...
+2026-04-02T09:13:47.3271365Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/e60b6be1-50e6-477a-b36a-1a8449ddad37
+2026-04-02T09:14:06.0757042Z Adding to the tool cache...
+2026-04-02T09:14:18.8193031Z Done
+2026-04-02T09:14:18.8193391Z Added to path
+2026-04-02T09:14:18.8193724Z Detecting full version...
+2026-04-02T09:14:18.8411280Z ##[group]Run pip install onnxsim onnx
+2026-04-02T09:14:18.8411705Z [36;1mpip install onnxsim onnx[0m
+2026-04-02T09:14:18.8411994Z [36;1msudo apt-get install -y unzip wget[0m
+2026-04-02T09:14:18.8536841Z shell: /usr/bin/bash -e {0}
+2026-04-02T09:14:18.8537132Z ##[endgroup]
+2026-04-02T09:14:20.2391654Z Defaulting to user installation because normal site-packages is not writeable
+2026-04-02T09:14:21.0149197Z Collecting onnxsim
+2026-04-02T09:14:21.0784847Z   Downloading onnxsim-0.6.2-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (2.9 MB)
+2026-04-02T09:14:21.2360054Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 18.8 MB/s eta 0:00:00
+2026-04-02T09:14:21.3785640Z Collecting onnx
+2026-04-02T09:14:21.3889793Z   Downloading onnx-1.21.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (17.6 MB)
+2026-04-02T09:14:21.6262756Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.6/17.6 MB 89.0 MB/s eta 0:00:00
+2026-04-02T09:14:21.8030774Z Collecting rich
+2026-04-02T09:14:21.8113111Z   Downloading rich-14.3.3-py3-none-any.whl (310 kB)
+2026-04-02T09:14:21.8176292Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.5/310.5 KB 76.7 MB/s eta 0:00:00
+2026-04-02T09:14:21.8555327Z Collecting typing_extensions>=4.7.1
+2026-04-02T09:14:21.8636624Z   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2026-04-02T09:14:21.8675554Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 KB 20.5 MB/s eta 0:00:00
+2026-04-02T09:14:21.9228284Z Collecting ml_dtypes>=0.5.0
+2026-04-02T09:14:21.9312600Z   Downloading ml_dtypes-0.5.4-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (5.0 MB)
+2026-04-02T09:14:21.9747672Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.0/5.0 MB 122.4 MB/s eta 0:00:00
+2026-04-02T09:14:22.4589009Z Collecting numpy>=1.23.2
+2026-04-02T09:14:22.4675025Z   Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+2026-04-02T09:14:22.5748314Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 134.0 MB/s eta 0:00:00
+2026-04-02T09:14:22.9524275Z Collecting protobuf>=4.25.1
+2026-04-02T09:14:22.9615635Z   Downloading protobuf-7.34.1-cp310-abi3-manylinux2014_x86_64.whl (324 kB)
+2026-04-02T09:14:22.9673002Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 324.3/324.3 KB 93.7 MB/s eta 0:00:00
+2026-04-02T09:14:23.0415491Z Collecting pygments<3.0.0,>=2.13.0
+2026-04-02T09:14:23.0513264Z   Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+2026-04-02T09:14:23.0621553Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 142.3 MB/s eta 0:00:00
+2026-04-02T09:14:23.0933970Z Collecting markdown-it-py>=2.2.0
+2026-04-02T09:14:23.1013085Z   Downloading markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+2026-04-02T09:14:23.1052970Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.3/87.3 KB 40.6 MB/s eta 0:00:00
+2026-04-02T09:14:23.1388389Z Collecting mdurl~=0.1
+2026-04-02T09:14:23.1463285Z   Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-04-02T09:14:23.4336795Z Installing collected packages: typing_extensions, pygments, protobuf, numpy, mdurl, ml_dtypes, markdown-it-py, rich, onnx, onnxsim
+2026-04-02T09:14:28.3049014Z Successfully installed markdown-it-py-4.0.0 mdurl-0.1.2 ml_dtypes-0.5.4 numpy-2.2.6 onnx-1.21.0 onnxsim-0.6.2 protobuf-7.34.1 pygments-2.20.0 rich-14.3.3 typing_extensions-4.15.0
+2026-04-02T09:14:32.2810069Z Reading package lists...
+2026-04-02T09:14:32.5231169Z Building dependency tree...
+2026-04-02T09:14:32.5245899Z Reading state information...
+2026-04-02T09:14:32.7195031Z unzip is already the newest version (6.0-26ubuntu3.2).
+2026-04-02T09:14:32.7199354Z wget is already the newest version (1.21.2-2ubuntu1.1).
+2026-04-02T09:14:32.7202401Z 0 upgraded, 0 newly installed, 0 to remove and 40 not upgraded.
+2026-04-02T09:14:32.7330859Z ##[group]Run LATEST=$(curl -s https://api.github.com/repos/Tencent/ncnn/releases/latest | grep tag_name | cut -d'"' -f4)
+2026-04-02T09:14:32.7332289Z [36;1mLATEST=$(curl -s https://api.github.com/repos/Tencent/ncnn/releases/latest | grep tag_name | cut -d'"' -f4)[0m
+2026-04-02T09:14:32.7333165Z [36;1mecho "NCNN version: ${LATEST}"[0m
+2026-04-02T09:14:32.7334082Z [36;1mwget -q "https://github.com/Tencent/ncnn/releases/download/${LATEST}/ncnn-${LATEST}-android-vulkan.zip" -O ncnn-android.zip[0m
+2026-04-02T09:14:32.7335329Z [36;1mwget -q "https://github.com/Tencent/ncnn/releases/download/${LATEST}/ncnn-${LATEST}-ubuntu-2204.zip" -O ncnn-tools.zip[0m
+2026-04-02T09:14:32.7335860Z [36;1munzip -q ncnn-android.zip[0m
+2026-04-02T09:14:32.7336116Z [36;1munzip -q ncnn-tools.zip[0m
+2026-04-02T09:14:32.7336517Z [36;1mNCNN_ANDROID_DIR=$(find . -maxdepth 1 -name "ncnn-*-android-vulkan" -type d | head -1)[0m
+2026-04-02T09:14:32.7337130Z [36;1mNCNN_TOOLS_DIR=$(find . -maxdepth 1 -name "ncnn-*-ubuntu*" -type d | head -1)[0m
+2026-04-02T09:14:32.7337586Z [36;1mecho "NCNN_ANDROID_DIR=${NCNN_ANDROID_DIR}" >> $GITHUB_ENV[0m
+2026-04-02T09:14:32.7337957Z [36;1mecho "NCNN_TOOLS_DIR=${NCNN_TOOLS_DIR}" >> $GITHUB_ENV[0m
+2026-04-02T09:14:32.7420380Z shell: /usr/bin/bash -e {0}
+2026-04-02T09:14:32.7420791Z ##[endgroup]
+2026-04-02T09:14:32.9419191Z NCNN version: 20260113
+2026-04-02T09:14:35.2129230Z ##[group]Run python -m onnxsim model/apex_final.onnx model/apex_final_sim.onnx
+2026-04-02T09:14:35.2129798Z [36;1mpython -m onnxsim model/apex_final.onnx model/apex_final_sim.onnx[0m
+2026-04-02T09:14:35.2130200Z [36;1mchmod +x ${NCNN_TOOLS_DIR}/bin/onnx2ncnn[0m
+2026-04-02T09:14:35.2131093Z [36;1m${NCNN_TOOLS_DIR}/bin/onnx2ncnn model/apex_final_sim.onnx model/apex_final.param model/apex_final.bin[0m
+2026-04-02T09:14:35.2131594Z [36;1m# 优化模型 (fp16)[0m
+2026-04-02T09:14:35.2131853Z [36;1mchmod +x ${NCNN_TOOLS_DIR}/bin/ncnnoptimize[0m
+2026-04-02T09:14:35.2132494Z [36;1m${NCNN_TOOLS_DIR}/bin/ncnnoptimize model/apex_final.param model/apex_final.bin model/apex_final_opt.param model/apex_final_opt.bin 65536[0m
+2026-04-02T09:14:35.2193448Z shell: /usr/bin/bash -e {0}
+2026-04-02T09:14:35.2193688Z env:
+2026-04-02T09:14:35.2193911Z   NCNN_ANDROID_DIR: ./ncnn-20260113-android-vulkan
+2026-04-02T09:14:35.2194248Z   NCNN_TOOLS_DIR: ./ncnn-20260113-ubuntu-2204
+2026-04-02T09:14:35.2194544Z ##[endgroup]
+2026-04-02T09:14:35.4613848Z Installing onnxruntime by `/usr/bin/python -m pip install onnxruntime`, please 
+2026-04-02T09:14:35.4614956Z wait for a moment..
+2026-04-02T09:14:35.7573049Z Defaulting to user installation because normal site-packages is not writeable
+2026-04-02T09:14:36.0781790Z Collecting onnxruntime
+2026-04-02T09:14:36.1322467Z   Downloading onnxruntime-1.23.2-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (17.4 MB)
+2026-04-02T09:14:36.4192341Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.4/17.4 MB 89.2 MB/s eta 0:00:00
+2026-04-02T09:14:36.4643757Z Collecting flatbuffers
+2026-04-02T09:14:36.4716764Z   Downloading flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+2026-04-02T09:14:36.4746685Z Requirement already satisfied: protobuf in /home/runner/.local/lib/python3.10/site-packages (from onnxruntime) (7.34.1)
+2026-04-02T09:14:36.5051703Z Collecting sympy
+2026-04-02T09:14:36.5126967Z   Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+2026-04-02T09:14:36.5644443Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 127.6 MB/s eta 0:00:00
+2026-04-02T09:14:36.5817291Z Requirement already satisfied: packaging in /usr/lib/python3/dist-packages (from onnxruntime) (21.3)
+2026-04-02T09:14:36.5824611Z Requirement already satisfied: numpy>=1.21.6 in /home/runner/.local/lib/python3.10/site-packages (from onnxruntime) (2.2.6)
+2026-04-02T09:14:36.6108981Z Collecting coloredlogs
+2026-04-02T09:14:36.6183107Z   Downloading coloredlogs-15.0.1-py2.py3-none-any.whl (46 kB)
+2026-04-02T09:14:36.6219564Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.0/46.0 KB 23.6 MB/s eta 0:00:00
+2026-04-02T09:14:36.6620164Z Collecting humanfriendly>=9.1
+2026-04-02T09:14:36.6692553Z   Downloading humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
+2026-04-02T09:14:36.6730014Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 86.8/86.8 KB 44.5 MB/s eta 0:00:00
+2026-04-02T09:14:36.7003722Z Collecting mpmath<1.4,>=1.1.0
+2026-04-02T09:14:36.7083898Z   Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-04-02T09:14:36.7157123Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 KB 115.5 MB/s eta 0:00:00
+2026-04-02T09:14:36.8825452Z Installing collected packages: mpmath, flatbuffers, sympy, humanfriendly, coloredlogs, onnxruntime
+2026-04-02T09:14:41.7588656Z Successfully installed coloredlogs-15.0.1 flatbuffers-25.12.19 humanfriendly-10.0 mpmath-1.3.0 onnxruntime-1.23.2 sympy-1.14.0
+2026-04-02T09:14:41.8787761Z Simplifying...
+2026-04-02T09:14:42.1077518Z Finish! Here is the difference:
+2026-04-02T09:14:42.1247886Z ┏━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┓
+2026-04-02T09:14:42.1249601Z ┃            ┃ Original Model ┃ Simplified Model ┃
+2026-04-02T09:14:42.1250131Z ┡━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━┩
+2026-04-02T09:14:42.1251652Z │ Add        │ 9              │ 8                │
+2026-04-02T09:14:42.1252127Z │ Concat     │ 19             │ 19               │
+2026-04-02T09:14:42.1252601Z │ Constant   │ 149            │ 143              │
+2026-04-02T09:14:42.1253720Z │ Conv       │ 64             │ 64               │
+2026-04-02T09:14:42.1254179Z │ Div        │ 2              │ 1                │
+2026-04-02T09:14:42.1254625Z │ Gather     │ 1              │ 0                │
+2026-04-02T09:14:42.1255073Z │ MaxPool    │ 3              │ 3                │
+2026-04-02T09:14:42.1255523Z │ Mul        │ 60             │ 58               │
+2026-04-02T09:14:42.1255967Z │ Reshape    │ 5              │ 5                │
+2026-04-02T09:14:42.1256436Z │ Resize     │ 2              │ 2                │
+2026-04-02T09:14:42.1256868Z │ Shape      │ 1              │ 0                │
+2026-04-02T09:14:42.1257350Z │ Sigmoid    │ 58             │ 58               │
+2026-04-02T09:14:42.1257776Z │ Slice      │ 2              │ 2                │
+2026-04-02T09:14:42.1258221Z │ Softmax    │ 1              │ 1                │
+2026-04-02T09:14:42.1258673Z │ Split      │ 9              │ 9                │
+2026-04-02T09:14:42.1259104Z │ Sub        │ 2              │ 2                │
+2026-04-02T09:14:42.1259814Z │ Transpose  │ 1              │ 1                │
+2026-04-02T09:14:42.1260279Z │ Model Size │ 11.7MiB        │ 11.6MiB          │
+2026-04-02T09:14:42.1260934Z └────────────┴────────────────┴──────────────────┘
+2026-04-02T09:14:42.1716795Z chmod: cannot access './ncnn-20260113-ubuntu-2204/bin/onnx2ncnn': No such file or directory
+2026-04-02T09:14:42.1733990Z ##[error]Process completed with exit code 1.
+2026-04-02T09:14:42.1847770Z Post job cleanup.
+2026-04-02T09:14:42.3650297Z [command]/usr/bin/git version
+2026-04-02T09:14:42.3697603Z git version 2.53.0
+2026-04-02T09:14:42.3763758Z Temporarily overriding HOME='/home/runner/work/_temp/67147440-2a51-41bd-bb0e-dd2c7c30fba2' before making global git config changes
+2026-04-02T09:14:42.3768706Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-02T09:14:42.3769787Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/android_ncnn_server/android_ncnn_server
+2026-04-02T09:14:42.3846166Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-02T09:14:42.3907644Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-02T09:14:42.4292035Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-02T09:14:42.4341421Z http.https://github.com/.extraheader
+2026-04-02T09:14:42.4348178Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-04-02T09:14:42.4402466Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-02T09:14:42.4776176Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-02T09:14:42.4826887Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-02T09:14:42.5355064Z Cleaning up orphan processes
+2026-04-02T09:14:42.5621535Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

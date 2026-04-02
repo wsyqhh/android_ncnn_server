@@ -31,8 +31,8 @@ jobs:
           wget -q "https://github.com/Tencent/ncnn/releases/download/${LATEST}/ncnn-${LATEST}-ubuntu-2204.zip" -O ncnn-tools.zip
           unzip -q ncnn-android.zip
           unzip -q ncnn-tools.zip
-          NCNN_ANDROID_DIR=$(find . -maxdepth 1 -name "ncnn-*-android-vulkan" -type d | head -1)
-          NCNN_TOOLS_DIR=$(find . -maxdepth 1 -name "ncnn-*-ubuntu*" -type d | head -1)
+          NCNN_ANDROID_DIR=$(find $PWD -maxdepth 1 -name "ncnn-*-android-vulkan" -type d | head -1)
+          NCNN_TOOLS_DIR=$(find $PWD -maxdepth 1 -name "ncnn-*-ubuntu*" -type d | head -1)
           echo "NCNN_ANDROID_DIR=${NCNN_ANDROID_DIR}" >> $GITHUB_ENV
           echo "NCNN_TOOLS_DIR=${NCNN_TOOLS_DIR}" >> $GITHUB_ENV
 
